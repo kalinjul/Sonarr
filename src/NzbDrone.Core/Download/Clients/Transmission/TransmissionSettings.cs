@@ -68,6 +68,9 @@ namespace NzbDrone.Core.Download.Clients.Transmission
         [FieldDefinition(10, Label = "Add Paused", Type = FieldType.Checkbox)]
         public bool AddPaused { get; set; }
 
+        [FieldDefinition(11, Label = "Pass download dir", Type = FieldType.Checkbox, Advanced =true, HelpText = "Pass 'seriesname/season' directory to transmission as download location. Requires valid host mappings. Uses Season Folder Format from Media Management settings.")]
+        public bool PassDownloadDir { get; set; }
+
         public NzbDroneValidationResult Validate()
         {
             return new NzbDroneValidationResult(Validator.Validate(this));
